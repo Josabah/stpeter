@@ -176,7 +176,7 @@ export default function GalleryManager() {
         return;
       }
 
-      if (currentItem) {
+    if (currentItem) {
         const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery/${currentItem.id}`, {
           method: 'PUT',
           headers: {
@@ -193,7 +193,7 @@ export default function GalleryManager() {
         if (!res.ok) throw new Error('Failed to update image');
         const data = await res.json();
         setGalleryItems(galleryItems.map(g => g.id === currentItem.id ? data.data : g));
-      } else {
+    } else {
         const body = new FormData();
         if (formData.imageFile) body.append('image', formData.imageFile);
         body.append('title', formData.title);
@@ -211,9 +211,9 @@ export default function GalleryManager() {
         if (!res.ok) throw new Error('Failed to upload image');
         const data = await res.json();
         setGalleryItems([data.data, ...galleryItems]);
-      }
-
-      handleCloseModal();
+    }
+    
+    handleCloseModal();
     } catch (err) {
       console.error('Error saving gallery item:', err);
       alert(err instanceof Error ? err.message : 'Failed to save');

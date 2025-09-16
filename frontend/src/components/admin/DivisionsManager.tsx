@@ -280,7 +280,7 @@ export default function DivisionsManager() {
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {divisions.map((division) => (
-                <tr key={division.id}>
+                <tr key={division._id}>
                   <td className="px-6 py-4 whitespace-nowrap">
                     <div className="text-sm font-medium text-gray-900">{division.title}</div>
                   </td>
@@ -298,7 +298,7 @@ export default function DivisionsManager() {
                       <PencilIcon className="h-5 w-5" />
                     </button>
                     <button
-                      onClick={() => handleDelete(division.id)}
+                      onClick={() => handleDelete(division._id)}
                       className="text-red-600 hover:text-red-900"
                     >
                       <TrashIcon className="h-5 w-5" />

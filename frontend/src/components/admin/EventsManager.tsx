@@ -300,7 +300,7 @@ export default function EventsManager() {
             </thead>
             <tbody className="bg-white divide-y divide-gray-200">
               {events.map((event) => (
-                <tr key={event.id}>
+                <tr key={event._id}>
                   <td className="px-6 py-4">
                     <div className="text-sm font-medium text-gray-900">{event.title}</div>
                     <div className="text-sm text-gray-500 truncate max-w-xs">{event.description}</div>
@@ -325,7 +325,7 @@ export default function EventsManager() {
                       <PencilIcon className="h-5 w-5" />
                     </button>
                     <button
-                      onClick={() => handleDelete(event.id)}
+                      onClick={() => handleDelete(event._id)}
                       className="text-red-600 hover:text-red-900"
                     >
                       <TrashIcon className="h-5 w-5" />
