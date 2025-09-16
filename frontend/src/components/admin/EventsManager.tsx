@@ -13,6 +13,7 @@ const initialEvents = [
     time: '10:00 AM - 12:00 PM',
     location: 'Main Church',
     featured: true,
+    category: 'worship',
   },
   {
     _id: '2',
@@ -22,6 +23,7 @@ const initialEvents = [
     time: '7:00 PM - 8:30 PM',
     location: 'Church Hall',
     featured: false,
+    category: 'education',
   },
   {
     _id: '3',
@@ -31,6 +33,7 @@ const initialEvents = [
     time: '6:30 PM - 8:00 PM',
     location: 'Youth Center',
     featured: false,
+    category: 'youth',
   },
   {
     _id: '4',
@@ -40,6 +43,7 @@ const initialEvents = [
     time: '9:00 AM - 2:00 PM',
     location: 'Church Grounds',
     featured: true,
+    category: 'special',
   },
 ];
 

@@ -38,7 +38,7 @@ export default function SpecialEvents() {
   
   // Filter for special events or use fallback data
   const specialEvents = events.length > 0 
-    ? events.filter(event => event.category === 'special' || event.category === 'education')
+    ? events.filter(event => event.category === 'special' || event.featured === true || event.category === 'education')
     : fallbackSpecialEvents;
 
   if (loading) {
