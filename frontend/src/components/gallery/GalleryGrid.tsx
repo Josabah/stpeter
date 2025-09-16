@@ -154,6 +154,19 @@ export default function GalleryGrid({ activeAlbum = 'all' }: GalleryGridProps) {
                   alt={image.title}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  onError={(e) => {
+                    console.error('Image failed to load:', image.imageUrl);
+                    console.error('Image error:', e);
+                    // Fallback to regular img tag
+                    const target = e.target as HTMLImageElement;
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `<img src="${image.imageUrl}" alt="${image.title}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />`;
+                    }
+                  }}
+                  onLoad={() => {
+                    console.log('Image loaded successfully:', image.imageUrl);
+                  }}
                 />
               </div>
             </div>

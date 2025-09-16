@@ -241,8 +241,12 @@ export default function GalleryManager() {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` },
       });
-      if (!res.ok) throw new Error('Failed to delete image');
+      if (!res.ok) {
+        const errorData = await res.json();
+        throw new Error(errorData.error || 'Failed to delete image');
+      }
       setGalleryItems(galleryItems.filter(i => i._id !== id));
+      alert('Image deleted successfully');
     } catch (err) {
       console.error('Error deleting image:', err);
       alert(err instanceof Error ? err.message : 'Failed to delete');
