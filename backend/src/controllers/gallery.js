@@ -118,11 +118,14 @@ exports.uploadImage = async (req, res, next) => {
       });
     }
 
-    // Upload image to Cloudinary
-    const result = await cloudinary.uploader.upload(file.tempFilePath, {
-      folder: 'stpeter_church/gallery',
-      use_filename: true
-    });
+    // Upload image to Cloudinary using data buffer
+    const result = await cloudinary.uploader.upload(
+      `data:${file.mimetype};base64,${file.data.toString('base64')}`,
+      {
+        folder: 'stpeter_church/gallery',
+        use_filename: true
+      }
+    );
 
     // Add Cloudinary data to request body
     req.body.imageUrl = result.secure_url;

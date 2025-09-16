@@ -6,7 +6,7 @@ import { PlusIcon, PencilIcon, TrashIcon, PhotoIcon } from '@heroicons/react/24/
 // Mock data for gallery images
 const initialGalleryItems = [
   {
-    id: '1',
+    _id: '1',
     title: 'Sunday Divine Liturgy',
     description: 'Photos from our weekly Divine Liturgy service',
     imageUrl: '/images/placeholder-1.jpg',
@@ -15,7 +15,7 @@ const initialGalleryItems = [
     uploadDate: '2023-05-15',
   },
   {
-    id: '2',
+    _id: '2',
     title: 'Church Building',
     description: 'Photos of our beautiful church building and grounds',
     imageUrl: '/images/placeholder-2.jpg',
@@ -24,7 +24,7 @@ const initialGalleryItems = [
     uploadDate: '2023-04-20',
   },
   {
-    id: '3',
+    _id: '3',
     title: 'Youth Group Activities',
     description: 'Our youth group during various activities and events',
     imageUrl: '/images/placeholder-3.jpg',
@@ -33,7 +33,7 @@ const initialGalleryItems = [
     uploadDate: '2023-05-10',
   },
   {
-    id: '4',
+    _id: '4',
     title: 'Easter Celebration',
     description: 'Photos from our Easter celebration and services',
     imageUrl: '/images/placeholder-4.jpg',
@@ -48,7 +48,7 @@ const categories = ['Services', 'Facilities', 'Youth', 'Holidays', 'Community', 
 
 // Define types for our data
 type GalleryItem = {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   imageUrl: string;
@@ -150,20 +150,21 @@ export default function GalleryManager() {
     
     const file = files[0];
     if (file) {
-      // In a real app, this would upload to Cloudinary or similar service
-      // For now, we'll just create a local URL for preview
+      // Create preview URL
       const reader = new FileReader();
       reader.onloadend = () => {
         // Type guard to ensure we only use string results
         if (typeof reader.result === 'string') {
           setImagePreview(reader.result);
-          setFormData({
-            ...formData,
-            imageUrl: reader.result,
-          });
         }
       };
       reader.readAsDataURL(file);
+      
+      // Store the file for upload
+      setFormData({
+        ...formData,
+        imageFile: file,
+      });
     }
   };
 
@@ -176,8 +177,8 @@ export default function GalleryManager() {
         return;
       }
 
-    if (currentItem) {
-        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery/${currentItem.id}`, {
+      if (currentItem) {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery/${currentItem._id}`, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -192,10 +193,15 @@ export default function GalleryManager() {
         });
         if (!res.ok) throw new Error('Failed to update image');
         const data = await res.json();
-        setGalleryItems(galleryItems.map(g => g.id === currentItem.id ? data.data : g));
-    } else {
+        setGalleryItems(galleryItems.map(g => g._id === currentItem._id ? data.data : g));
+      } else {
+        if (!formData.imageFile) {
+          alert('Please select an image file');
+          return;
+        }
+
         const body = new FormData();
-        if (formData.imageFile) body.append('image', formData.imageFile);
+        body.append('image', formData.imageFile);
         body.append('title', formData.title);
         body.append('description', formData.description);
         body.append('album', formData.category);
@@ -208,10 +214,13 @@ export default function GalleryManager() {
           },
           body,
         });
-        if (!res.ok) throw new Error('Failed to upload image');
+        if (!res.ok) {
+          const errorData = await res.json();
+          throw new Error(errorData.error || 'Failed to upload image');
+        }
         const data = await res.json();
         setGalleryItems([data.data, ...galleryItems]);
-    }
+      }
     
     handleCloseModal();
     } catch (err) {
@@ -233,7 +242,7 @@ export default function GalleryManager() {
         headers: { 'Authorization': `Bearer ${token}` },
       });
       if (!res.ok) throw new Error('Failed to delete image');
-      setGalleryItems(galleryItems.filter(i => i.id !== id));
+      setGalleryItems(galleryItems.filter(i => i._id !== id));
     } catch (err) {
       console.error('Error deleting image:', err);
       alert(err instanceof Error ? err.message : 'Failed to delete');
@@ -268,7 +277,7 @@ export default function GalleryManager() {
       ) : (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {galleryItems.map((item) => (
-            <div key={item.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            <div key={item._id} className="bg-white rounded-lg shadow-md overflow-hidden">
               <div className="relative h-48 bg-gray-200">
                 {item.imageUrl ? (
                   <img
@@ -301,7 +310,7 @@ export default function GalleryManager() {
                       <PencilIcon className="h-5 w-5" />
                     </button>
                     <button
-                      onClick={() => handleDelete(item.id)}
+                      onClick={() => handleDelete(item._id)}
                       className="text-red-600 hover:text-red-900"
                     >
                       <TrashIcon className="h-5 w-5" />
