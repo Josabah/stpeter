@@ -6,7 +6,7 @@ import { PlusIcon, PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
 // Mock data for events
 const initialEvents = [
   {
-    id: '1',
+    _id: '1',
     title: 'Sunday Divine Liturgy',
     description: 'Weekly Divine Liturgy service',
     date: '2023-05-28',
@@ -15,7 +15,7 @@ const initialEvents = [
     featured: true,
   },
   {
-    id: '2',
+    _id: '2',
     title: 'Bible Study Group',
     description: 'Weekly Bible study and discussion',
     date: '2023-05-31',
@@ -24,7 +24,7 @@ const initialEvents = [
     featured: false,
   },
   {
-    id: '3',
+    _id: '3',
     title: 'Youth Group Meeting',
     description: 'Weekly gathering for youth activities and fellowship',
     date: '2023-06-02',
@@ -33,7 +33,7 @@ const initialEvents = [
     featured: false,
   },
   {
-    id: '4',
+    _id: '4',
     title: 'Church Feast Day Celebration',
     description: 'Annual celebration of our church patron saint',
     date: '2023-06-29',
@@ -45,7 +45,7 @@ const initialEvents = [
 
 // Define types for our data
 type Event = {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   date: string;
@@ -155,7 +155,7 @@ export default function EventsManager() {
 
       if (currentEvent) {
         // Update existing event
-        const updateUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/events/${currentEvent.id}`;
+        const updateUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/events/${currentEvent._id}`;
         console.log('Updating event via:', updateUrl);
         const response = await fetch(updateUrl, {
           method: 'PUT',
@@ -177,7 +177,7 @@ export default function EventsManager() {
 
         const updatedEvent = await response.json();
         const updatedEvents = events.map((evt) =>
-          evt.id === currentEvent.id ? { ...evt, ...updatedEvent.data } : evt
+          evt._id === currentEvent._id ? { ...evt, ...updatedEvent.data } : evt
         );
         setEvents(updatedEvents);
       } else {
@@ -243,7 +243,7 @@ export default function EventsManager() {
         throw new Error(`${message} (status ${response.status})`);
       }
 
-      const updatedEvents = events.filter((evt) => evt.id !== id);
+      const updatedEvents = events.filter((evt) => evt._id !== id);
       setEvents(updatedEvents);
     } catch (error) {
       console.error('Error deleting event:', error);

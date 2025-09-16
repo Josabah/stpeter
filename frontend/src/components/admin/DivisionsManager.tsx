@@ -6,28 +6,28 @@ import { PlusIcon, PencilIcon, TrashIcon } from '@heroicons/react/24/outline';
 // Mock data for divisions
 const initialDivisions = [
   {
-    id: '1',
+    _id: '1',
     title: 'Worship & Prayer',
     description: 'Join us for Divine Liturgy, prayer services, and spiritual guidance.',
     icon: 'FaPrayingHands',
     color: 'bg-primary-100 text-primary-700',
   },
   {
-    id: '2',
+    _id: '2',
     title: 'Community Outreach',
     description: 'Serving our community through charity work and social programs.',
     icon: 'FaHandsHelping',
     color: 'bg-accent-100 text-accent-700',
   },
   {
-    id: '3',
+    _id: '3',
     title: 'Choir & Music',
     description: 'Experience the beauty of Orthodox hymns and musical traditions.',
     icon: 'FaMusic',
     color: 'bg-secondary-100 text-secondary-700',
   },
   {
-    id: '4',
+    _id: '4',
     title: 'Education',
     description: 'Learn about Orthodox faith through classes, study groups, and resources.',
     icon: 'FaBook',
@@ -37,7 +37,7 @@ const initialDivisions = [
 
 // Define types for our data
 type Division = {
-  id: string;
+  _id: string;
   title: string;
   description: string;
   icon: string;
@@ -144,7 +144,7 @@ export default function DivisionsManager() {
 
       if (currentDivision) {
         // Update existing division
-        const updateUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/divisions/${currentDivision.id}`;
+        const updateUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/divisions/${currentDivision._id}`;
         console.log('Updating division via:', updateUrl);
         const response = await fetch(updateUrl, {
           method: 'PUT',
@@ -166,7 +166,7 @@ export default function DivisionsManager() {
 
         const updatedDivision = await response.json();
         const updatedDivisions = divisions.map((div) =>
-          div.id === currentDivision.id ? { ...div, ...updatedDivision.data } : div
+          div._id === currentDivision._id ? { ...div, ...updatedDivision.data } : div
         );
         setDivisions(updatedDivisions);
       } else {
@@ -232,7 +232,7 @@ export default function DivisionsManager() {
         throw new Error(`${message} (status ${response.status})`);
       }
 
-      const updatedDivisions = divisions.filter((div) => div.id !== id);
+      const updatedDivisions = divisions.filter((div) => div._id !== id);
       setDivisions(updatedDivisions);
     } catch (error) {
       console.error('Error deleting division:', error);

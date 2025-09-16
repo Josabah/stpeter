@@ -82,16 +82,16 @@ export default function GalleryManager() {
   const [imagePreview, setImagePreview] = useState('');
 
   useEffect(() => {
-    // Simulate API call to get gallery items
     const fetchGalleryItems = async () => {
       try {
-        // In a real app, this would be an API call
-        setTimeout(() => {
-          setGalleryItems(initialGalleryItems);
-          setIsLoading(false);
-        }, 1000);
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery`);
+        if (!res.ok) throw new Error('Failed to load gallery');
+        const data = await res.json();
+        setGalleryItems(data.data || []);
       } catch (error) {
         console.error('Error fetching gallery items:', error);
+        setGalleryItems(initialGalleryItems);
+      } finally {
         setIsLoading(false);
       }
     };
@@ -167,32 +167,77 @@ export default function GalleryManager() {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
-    // In a real app, this would be an API call
-    if (currentItem) {
-      // Update existing item
-      const updatedItems = galleryItems.map((item) =>
-        item.id === currentItem.id ? { ...item, ...formData } : item
-      );
-      setGalleryItems(updatedItems);
-    } else {
-      // Add new item
-      const newItem = {
-        id: Date.now().toString(),
-        ...formData,
-      };
-      setGalleryItems([...galleryItems, newItem]);
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('You must be logged in to make changes');
+        return;
+      }
+
+      if (currentItem) {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery/${currentItem.id}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json',
+            'Authorization': `Bearer ${token}`,
+          },
+          body: JSON.stringify({
+            title: formData.title,
+            description: formData.description,
+            album: formData.category,
+            featured: formData.featured,
+          }),
+        });
+        if (!res.ok) throw new Error('Failed to update image');
+        const data = await res.json();
+        setGalleryItems(galleryItems.map(g => g.id === currentItem.id ? data.data : g));
+      } else {
+        const body = new FormData();
+        if (formData.imageFile) body.append('image', formData.imageFile);
+        body.append('title', formData.title);
+        body.append('description', formData.description);
+        body.append('album', formData.category);
+        body.append('featured', String(formData.featured));
+
+        const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${token}`,
+          },
+          body,
+        });
+        if (!res.ok) throw new Error('Failed to upload image');
+        const data = await res.json();
+        setGalleryItems([data.data, ...galleryItems]);
+      }
+
+      handleCloseModal();
+    } catch (err) {
+      console.error('Error saving gallery item:', err);
+      alert(err instanceof Error ? err.message : 'Failed to save');
     }
-    
-    handleCloseModal();
   };
 
-  const handleDelete = (id: string) => {
-    // In a real app, this would be an API call
-    const updatedItems = galleryItems.filter((item) => item.id !== id);
-    setGalleryItems(updatedItems);
+  const handleDelete = async (id: string) => {
+    if (!confirm('Delete this image?')) return;
+    try {
+      const token = localStorage.getItem('token');
+      if (!token) {
+        alert('You must be logged in to make changes');
+        return;
+      }
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery/${id}`, {
+        method: 'DELETE',
+        headers: { 'Authorization': `Bearer ${token}` },
+      });
+      if (!res.ok) throw new Error('Failed to delete image');
+      setGalleryItems(galleryItems.filter(i => i.id !== id));
+    } catch (err) {
+      console.error('Error deleting image:', err);
+      alert(err instanceof Error ? err.message : 'Failed to delete');
+    }
   };
 
   // Format date for display
