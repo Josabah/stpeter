@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 const timelineEvents = [
   {
     year: '1975',
-    title: 'Foundation',
+    title: 'testFoundation',
     description: 'St. Peter Orthodox Church was established by a small group of dedicated Orthodox Christians.',
   },
   {

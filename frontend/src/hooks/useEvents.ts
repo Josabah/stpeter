@@ -8,6 +8,7 @@ export interface Event {
   time: string;
   location: string;
   category: string;
+  featured: boolean;
   isRecurring: boolean;
   recurringPattern?: string;
   createdAt: string;

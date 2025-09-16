@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 
 const weeklyEvents = [
   {
-    day: 'Sunday',
+    day: 'Sundaytest',
     events: [
-      { time: '9:00 AM', title: 'Orthros (Matins)', location: 'Main Church' },
+      { time: '9:00 AM', title: 'testOrthros (Matins)', location: 'Main Church' },
       { time: '10:00 AM', title: 'Divine Liturgy', location: 'Main Church' },
       { time: '11:30 AM', title: 'Coffee Hour & Fellowship', location: 'Church Hall' },
       { time: '12:00 PM', title: 'Sunday School (Sept-May)', location: 'Education Building' },

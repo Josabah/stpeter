@@ -14,7 +14,7 @@ export default function CallToAction() {
           className="max-w-3xl mx-auto text-center"
         >
           <h2 className="text-3xl md:text-4xl font-serif font-bold mb-6">
-            Join Our Community
+            testJoin Our Community
           </h2>
           <p className="text-lg text-primary-100 mb-8">
             We invite you to join us for worship, fellowship, and service. Whether you're new to Orthodoxy or a lifelong member, there's a place for you in our church family.

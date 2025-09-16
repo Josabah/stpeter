@@ -41,6 +41,11 @@ const EventSchema = new mongoose.Schema({
     type: Boolean,
     default: false
   },
+  category: {
+    type: String,
+    enum: ['worship', 'special', 'education', 'youth', 'community', 'other'],
+    default: 'worship'
+  },
   createdAt: {
     type: Date,
     default: Date.now

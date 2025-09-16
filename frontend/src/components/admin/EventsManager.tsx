@@ -52,6 +52,7 @@ type Event = {
   time: string;
   location: string;
   featured: boolean;
+  category: string;
 };
 
 export default function EventsManager() {
@@ -66,6 +67,7 @@ export default function EventsManager() {
     time: '',
     location: '',
     featured: false,
+    category: 'worship',
   });
 
   useEffect(() => {
@@ -113,6 +115,7 @@ export default function EventsManager() {
         time: event.time,
         location: event.location,
         featured: event.featured,
+        category: event.category || 'worship',
       });
     } else {
       setCurrentEvent(null);
@@ -123,6 +126,7 @@ export default function EventsManager() {
         time: '',
         location: '',
         featured: false,
+        category: 'worship',
       });
     }
     setIsModalOpen(true);
@@ -423,6 +427,26 @@ export default function EventsManager() {
                         className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                         required
                       />
+                    </div>
+                    <div>
+                      <label htmlFor="category" className="block text-sm font-medium text-gray-700">
+                        Category
+                      </label>
+                      <select
+                        name="category"
+                        id="category"
+                        value={formData.category}
+                        onChange={handleInputChange}
+                        className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
+                        required
+                      >
+                        <option value="worship">Worship</option>
+                        <option value="special">Special Event</option>
+                        <option value="education">Education</option>
+                        <option value="youth">Youth</option>
+                        <option value="community">Community</option>
+                        <option value="other">Other</option>
+                      </select>
                     </div>
                     <div className="flex items-center">
                       <input

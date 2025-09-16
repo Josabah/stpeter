@@ -19,7 +19,7 @@ export default function OurStory() {
               St. Peter Orthodox Church was established in 1975 by a small group of dedicated Orthodox Christians who sought to create a spiritual home for their families and future generations.
             </p>
             <p className="text-lg text-secondary-700 mb-6">
-              What began as a humble mission with just a few families has grown into a vibrant parish serving hundreds of faithful from various backgrounds and traditions. Our church building, completed in 1985, stands as a testament to the dedication and sacrifice of our founding members.
+              testWhat began as a humble mission with just a few families has grown into a vibrant parish serving hundreds of faithful from various backgrounds and traditions. Our church building, completed in 1985, stands as a testament to the dedication and sacrifice of our founding members.
             </p>
             <p className="text-lg text-secondary-700">
               Today, we continue to honor our rich Orthodox heritage while embracing our role as a modern church community that serves the spiritual and social needs of our members and the broader community.
