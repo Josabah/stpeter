@@ -6,10 +6,9 @@ export interface GalleryImage {
   description: string;
   album: string;
   imageUrl: string; // This will be the Cloudinary URL
-  cloudinaryPublicId: string;
-  uploadedBy: string;
+  cloudinaryId: string;
+  featured: boolean;
   createdAt: string;
-  updatedAt: string;
 }
 
 export const useGallery = () => {
@@ -20,13 +19,17 @@ export const useGallery = () => {
   const fetchImages = async () => {
     try {
       setLoading(true);
+      console.log('Fetching gallery images from:', `${process.env.NEXT_PUBLIC_API_URL}/api/gallery`);
       const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery`);
+      
+      console.log('Gallery API response status:', response.status);
       
       if (!response.ok) {
         throw new Error('Failed to fetch gallery images');
       }
       
       const data = await response.json();
+      console.log('Gallery API response data:', data);
       setImages(data.data || []);
       setError(null);
     } catch (err) {
