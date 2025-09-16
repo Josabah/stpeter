@@ -28,9 +28,9 @@ export default function AdminPage() {
       }
 
       try {
-        console.log('Validating token with API:', `${process.env.NEXT_PUBLIC_API_URL}/auth/me`);
-        // Validate token with backend using the /auth/me endpoint
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/auth/me`, {
+        console.log('Validating token with API:', `${process.env.NEXT_PUBLIC_API_URL}/api/auth/me`);
+        // Validate token with backend using the /api/auth/me endpoint
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/me`, {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${token}`,
