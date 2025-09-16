@@ -155,7 +155,9 @@ export default function EventsManager() {
 
       if (currentEvent) {
         // Update existing event
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/events/${currentEvent.id}`, {
+        const updateUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/events/${currentEvent.id}`;
+        console.log('Updating event via:', updateUrl);
+        const response = await fetch(updateUrl, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -165,7 +167,12 @@ export default function EventsManager() {
         });
 
         if (!response.ok) {
-          throw new Error('Failed to update event');
+          let message = 'Failed to update event';
+          try {
+            const err = await response.json();
+            message = err?.error || message;
+          } catch {}
+          throw new Error(`${message} (status ${response.status})`);
         }
 
         const updatedEvent = await response.json();
@@ -175,7 +182,9 @@ export default function EventsManager() {
         setEvents(updatedEvents);
       } else {
         // Add new event
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/events`, {
+        const createUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/events`;
+        console.log('Creating event via:', createUrl);
+        const response = await fetch(createUrl, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -185,7 +194,12 @@ export default function EventsManager() {
         });
 
         if (!response.ok) {
-          throw new Error('Failed to create event');
+          let message = 'Failed to create event';
+          try {
+            const err = await response.json();
+            message = err?.error || message;
+          } catch {}
+          throw new Error(`${message} (status ${response.status})`);
         }
 
         const newEvent = await response.json();
@@ -195,7 +209,7 @@ export default function EventsManager() {
       handleCloseModal();
     } catch (error) {
       console.error('Error saving event:', error);
-      alert('Failed to save event. Please try again.');
+      alert(`Failed to save event. ${error instanceof Error ? error.message : ''}`);
     }
   };
 
@@ -211,7 +225,9 @@ export default function EventsManager() {
         return;
       }
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/events/${id}`, {
+      const deleteUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/events/${id}`;
+      console.log('Deleting event via:', deleteUrl);
+      const response = await fetch(deleteUrl, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -219,7 +235,12 @@ export default function EventsManager() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to delete event');
+        let message = 'Failed to delete event';
+        try {
+          const err = await response.json();
+          message = err?.error || message;
+        } catch {}
+        throw new Error(`${message} (status ${response.status})`);
       }
 
       const updatedEvents = events.filter((evt) => evt.id !== id);

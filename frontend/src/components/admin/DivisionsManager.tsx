@@ -144,7 +144,9 @@ export default function DivisionsManager() {
 
       if (currentDivision) {
         // Update existing division
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/divisions/${currentDivision.id}`, {
+        const updateUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/divisions/${currentDivision.id}`;
+        console.log('Updating division via:', updateUrl);
+        const response = await fetch(updateUrl, {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -154,7 +156,12 @@ export default function DivisionsManager() {
         });
 
         if (!response.ok) {
-          throw new Error('Failed to update division');
+          let message = 'Failed to update division';
+          try {
+            const err = await response.json();
+            message = err?.error || message;
+          } catch {}
+          throw new Error(`${message} (status ${response.status})`);
         }
 
         const updatedDivision = await response.json();
@@ -164,7 +171,9 @@ export default function DivisionsManager() {
         setDivisions(updatedDivisions);
       } else {
         // Add new division
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/divisions`, {
+        const createUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/divisions`;
+        console.log('Creating division via:', createUrl);
+        const response = await fetch(createUrl, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
@@ -174,7 +183,12 @@ export default function DivisionsManager() {
         });
 
         if (!response.ok) {
-          throw new Error('Failed to create division');
+          let message = 'Failed to create division';
+          try {
+            const err = await response.json();
+            message = err?.error || message;
+          } catch {}
+          throw new Error(`${message} (status ${response.status})`);
         }
 
         const newDivision = await response.json();
@@ -184,7 +198,7 @@ export default function DivisionsManager() {
       handleCloseModal();
     } catch (error) {
       console.error('Error saving division:', error);
-      alert('Failed to save division. Please try again.');
+      alert(`Failed to save division. ${error instanceof Error ? error.message : ''}`);
     }
   };
 
@@ -200,7 +214,9 @@ export default function DivisionsManager() {
         return;
       }
 
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/divisions/${id}`, {
+      const deleteUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/divisions/${id}`;
+      console.log('Deleting division via:', deleteUrl);
+      const response = await fetch(deleteUrl, {
         method: 'DELETE',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -208,7 +224,12 @@ export default function DivisionsManager() {
       });
 
       if (!response.ok) {
-        throw new Error('Failed to delete division');
+        let message = 'Failed to delete division';
+        try {
+          const err = await response.json();
+          message = err?.error || message;
+        } catch {}
+        throw new Error(`${message} (status ${response.status})`);
       }
 
       const updatedDivisions = divisions.filter((div) => div.id !== id);
