@@ -13,16 +13,16 @@ export default function OurStory() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h2 className="heading-2 mb-6">Our Story</h2>
+            <h2 className="heading-2 mb-6">የግቢ ጉባኤያችን ታሪክ በአጭሩ</h2>
             <div className="w-20 h-1 bg-primary-600 mb-8"></div>
             <p className="text-lg text-secondary-700 mb-6">
-              St. Peter Orthodox Church was established in 1975 by a small group of dedicated Orthodox Christians who sought to create a spiritual home for their families and future generations.
+             በ 2003 ዓ.ም በአዲስ አበባ ዩኒቨርሲቲ የተመደቡ ጤና ሳይንስ ተማሪዎች አዲስ ካምፓስ እንዲገቡ ተደረገ። የገቡበትም ካምፓስ አሁን ላይ ሰፈረ ሰላም በመባል የሚታወቀው ግቢ በመጀመሪያ ሲመሰረት(በተለምዶ ሳንባ ነቀርሳ) ሕክምና ማዕከል የነበረው የቅዱስ ጴጥሮስ ሆስፒታል ግቢ ነበር። ቅዱስ ጴጥሮስ ግቢ ጉባኤ ሰፈረ ሰላም ካምፓስ ተማሪዎችን ተቀብሎ ማስተማር ከጀመረ ከ 2 ዓመት በኋላ በ 2005 ዓ.ም ተቋቁሞ ሥራ የጀመረ ሲሆን የመመስረቱ ምክንያትም ከዛ በፊት የግቢው ተማሪዎች በጳውሎስ ግቢ ጉባኤ ይገለገሉ የነበረ ቢሆንም ሁለቱ ተማሪዎች የሚሳለሙበት ደብር የተለያየ በመሆኑና ካምፓሱ በደንብ ራሱን በመቻል ተማሪዎችን ማስተማር በመጀመሩ ነው።
             </p>
             <p className="text-lg text-secondary-700 mb-6">
-              testWhat began as a humble mission with just a few families has grown into a vibrant parish serving hundreds of faithful from various backgrounds and traditions. Our church building, completed in 1985, stands as a testament to the dedication and sacrifice of our founding members.
+              ግቢ ጉባኤው ራሱን ለመቻል ጥያቄውን ለማኀበረ ቅዱሳን አዲስ አበባ ማዕከል አቅርቧል። ሚያዚያ 2004 ዓ.ም ከማዕከል በወጡ ተጠሪዎች አሰባሳቢነት ስለግቢው አጠቃላይ ሁኔታና ቀጣይነት ከተመረጡ ልጆች ጋር ውይይት ተካሂዶ ግቢው ከ ቀጣይ 2005 ጀምሮ ራሱን ችሎ ሥራ እንዲጀምር ከስምምነት ተደርሷል። ስሙም ቅዱስ ጴጥርስ ተብሎ እንዲቀጥል ሆኗል ።
             </p>
             <p className="text-lg text-secondary-700">
-              Today, we continue to honor our rich Orthodox heritage while embracing our role as a modern church community that serves the spiritual and social needs of our members and the broader community.
+             ከዚያን ጊዜ ጀምሮ የተማሪ ቁጥር እጅጉን ጨምሮ ግቢ  ጉባኤያችን እያደገ በመምጣት የተለያዩ አገልግሎቶችን በመስጠት ላይ ይገኛል። ከነዚህም ውስጥም ኮርስ ፣ የአብነት ትምህርት ፣ የጸሎት እና የአንድነት መርሐግብራት ፣ የበገና ትምህርት ፣ ዝክረ ቅዱሳን እና የበጎ አድራጎት ሥራዎች በዋነኝነት ይጠቀሳሉ።
             </p>
           </motion.div>
           
