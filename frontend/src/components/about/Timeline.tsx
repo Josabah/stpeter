@@ -3,44 +3,54 @@ import { motion } from 'framer-motion'
 
 const timelineEvents = [
   {
-    year: '1975',
-    title: 'testFoundation',
-    description: 'St. Peter Orthodox Church was established by a small group of dedicated Orthodox Christians.',
+    year: '2005',
+    title: 'Foundation',
+    description: 'ቅ/ጼጥሮስ እውቅና አጊኝቶ ተመሰረተ ኮርስ፣ፅዋ እና ልዩ መርሐ ግብራት ተጀመረ አብነት ትምህርት ቤት ተቆቆመ መንፈሳዊ ጉዞ',
   },
   {
-    year: '1978',
+    year: '2006',
     title: 'First Divine Liturgy',
-    description: 'The first Divine Liturgy was celebrated in a rented space with visiting clergy.',
+    description: 'መደበኛ መርሐ ግብራት መጠናከር የተማሪ ቁጥር መጨመር መንፈሳዊ ጉዞ',
   },
   {
-    year: '1980',
+    year: '2007',
     title: 'Land Purchase',
-    description: 'The community purchased land for a permanent church building.',
+    description: 'ለግቢው ገቢ የሚያስገኙ ቆሚ ፕሮጀክቶችን በመንደፍ ተንቀሳቅሷል።',
   },
   {
-    year: '1985',
+    year: '2008',
     title: 'Church Building',
-    description: 'Our beautiful church building was completed and consecrated.',
+    description: 'አብነቱን በማጠናከር የቁጥር እና ዜማ ት/ቤት ማስከፈት ተችሏል። ኮርስ በኦሮሞኛ መስጠት ተችሏል። የቤተሰብ ምደባ ተጀምሯል። መንፈሳዊ ጉብኝቶች',
   },
   {
-    year: '1995',
+    year: '2009',
     title: 'Community Center',
-    description: 'The parish hall and community center were added to accommodate growth.',
+    description: 'ለ ሰባት ተማሪዎች ስልጣነ ክህነት ማሰጠት ችሏል። መደበኛ መርሐ ግብራት መጠናከር መንፈሳዊ ጉዞ',
   },
   {
-    year: '2010',
+    year: '2010&11',
     title: 'Iconography Project',
-    description: 'Major iconography project completed, adorning the church with traditional Orthodox imagery.',
+    description: 'መደበኛ መርሐ ግብራት መጠናከር መንፈሳዊ ጉዞ',
   },
   {
-    year: '2020',
+    year: '2012',
     title: 'Digital Ministry',
-    description: 'Expanded our reach through online services and digital ministry during global challenges.',
+    description: 'የቤተሰብ መዋቅር በአዲስ መልክአደራጅቶ መንቀሳቀስ ተችሏል። መደበኛ መርሐ ግብራት መጠናከር መንፈሳዊ ጉዞ',
   },
   {
-    year: 'Today',
+    year: '2014',
     title: 'Growing Community',
-    description: 'Continuing to grow and serve as a spiritual home for Orthodox Christians and seekers.',
+    description: '4ተተኪ መምህራን በደረጃ 1 እና 1ተማሪ በደረጃ 2 አሰልጥኗል የበገና ትምህርት ቤቱን አስከፍቷል።',
+  },
+  {
+    year: '2015',
+    title: 'Growing Community',
+    description: '8 በደረጃ 1 ተተኪ መምህራንን አስመርቆል ቅዱሳት መካናት ጉብኝት',
+  },
+   {
+    year: '2016',
+    title: 'Growing Community',
+    description: 'ሎከር ማሰራት ተችሏል የ ቅድሳት ስዕላት እና በገና ግዢ ተደርጓል በተለያዩ ቆንቆዎች ኮርስ ተሰጥቶል',
   },
 ]
 
