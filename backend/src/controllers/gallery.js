@@ -208,11 +208,18 @@ exports.deleteGalleryItem = async (req, res) => {
       });
     }
 
-    // Delete image from Cloudinary
-    await cloudinary.uploader.destroy(galleryItem.cloudinaryId);
+    // Delete image from Cloudinary (if present)
+    if (galleryItem.cloudinaryId) {
+      try {
+        await cloudinary.uploader.destroy(galleryItem.cloudinaryId);
+      } catch (e) {
+        // Log Cloudinary deletion error but continue with DB deletion
+        console.error('Cloudinary deletion error:', e?.message || e);
+      }
+    }
 
-    // Delete gallery item from database
-    await galleryItem.remove();
+    // Delete gallery item from database (Mongoose v7: use deleteOne)
+    await galleryItem.deleteOne();
 
     res.status(200).json({
       success: true,
