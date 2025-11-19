@@ -3,44 +3,45 @@ import { motion } from 'framer-motion'
 
 const weeklyEvents = [
   {
-    day: 'Sundaytest',
+    day: 'እሑድ',
     events: [
-      { time: '9:00 AM', title: 'testOrthros (Matins)', location: 'Main Church' },
-      { time: '10:00 AM', title: 'Divine Liturgy', location: 'Main Church' },
-      { time: '11:30 AM', title: 'Coffee Hour & Fellowship', location: 'Church Hall' },
-      { time: '12:00 PM', title: 'Sunday School (Sept-May)', location: 'Education Building' },
+      { time: '7:30 - 10:30 LT', title: 'የአብነት ትምህርት & የመዝሙር ጥናት', location: 'Main Church' },
     ],
   },
   {
-    day: 'Monday',
+    day: 'ሰኞ',
     events: [
-      { time: '6:00 PM', title: 'Adult Education Class', location: 'Church Hall' },
+      { time: '11:45 LT', title: 'የ3ተኛ & የ4ተኛ ዓመቶች ኮርስ', location: 'Church Hall' },
+    ],
+  },
+   {
+    day: 'ማክሰኞ',
+    events: [
+      { time: '', title: 'የመዝሙር ጥናት', location: 'Church Hall' },
     ],
   },
   {
-    day: 'Wednesday',
+    day: 'ረቡዕ',
     events: [
-      { time: '6:00 PM', title: 'Vespers', location: 'Main Church' },
-      { time: '7:00 PM', title: 'Bible Study', location: 'Church Hall' },
+      { time: '11:45 LT', title: 'የ1ኛ ዓመቶች ኮርስ', location: 'Main Church' },
     ],
   },
   {
-    day: 'Thursday',
+    day: 'ኀሙስ',
     events: [
-      { time: '7:00 PM', title: 'Choir Practice', location: 'Main Church' },
+      { time: '11:45 LT', title: 'የ2ተኛ ዓመቶች ኮርስ', location: 'Main Church' },
     ],
   },
   {
-    day: 'Friday',
+    day: 'ዓርብ',
     events: [
-      { time: '6:30 PM', title: 'Youth Group Meeting', location: 'Youth Center' },
+      { time: '11:45 LT', title: 'የአንድነት መርሐግብር', location: 'Youth Center' },
     ],
   },
   {
     day: 'Saturday',
     events: [
-      { time: '5:00 PM', title: 'Great Vespers', location: 'Main Church' },
-      { time: '6:00 PM', title: 'Confession', location: 'Main Church' },
+      { time: '7:30 - 10:30 LT', title: 'የአብነት ትምህርት & የበገና መዝሙር ጥናት', location: 'Main Church' },
     ],
   },
 ]

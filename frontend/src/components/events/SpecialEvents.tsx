@@ -4,33 +4,33 @@ import { useEvents } from '@/hooks/useEvents'
 
 // Fallback data in case API fails
 const fallbackSpecialEvents = [
-  {
-    _id: '1',
-    title: 'Parish Feast Day Celebration',
-    date: 'June 29, 2023',
-    time: '10:00 AM - 2:00 PM',
-    location: 'Church Grounds',
-    description: 'Join us as we celebrate the Feast of Saints Peter and Paul with Divine Liturgy followed by a festive meal and activities for all ages.',
-    category: 'special',
-  },
-  {
-    _id: '2',
-    title: 'Annual Greek Festival',
-    date: 'August 12-14, 2023',
-    time: 'Various Times',
-    location: 'Church Grounds',
-    description: 'Our annual Greek Festival featuring authentic food, music, dancing, and cultural exhibits. This is our biggest community event of the year!',
-    category: 'special',
-  },
-  {
-    _id: '3',
-    title: 'Orthodox Christian Education Series',
-    date: 'September 5 - October 24, 2023',
-    time: 'Tuesdays, 7:00 PM - 8:30 PM',
-    location: 'Church Hall',
-    description: 'An 8-week series exploring the fundamentals of Orthodox Christianity. Perfect for inquirers, catechumens, and anyone wanting to deepen their understanding of the faith.',
-    category: 'education',
-  },
+  // {
+  //   _id: '1',
+  //   title: 'Parish Feast Day Celebration',
+  //   date: 'June 29, 2023',
+  //   time: '10:00 AM - 2:00 PM',
+  //   location: 'Church Grounds',
+  //   description: 'Join us as we celebrate the Feast of Saints Peter and Paul with Divine Liturgy followed by a festive meal and activities for all ages.',
+  //   category: 'special',
+  // },
+  // {
+  //   _id: '2',
+  //   title: 'Annual Greek Festival',
+  //   date: 'August 12-14, 2023',
+  //   time: 'Various Times',
+  //   location: 'Church Grounds',
+  //   description: 'Our annual Greek Festival featuring authentic food, music, dancing, and cultural exhibits. This is our biggest community event of the year!',
+  //   category: 'special',
+  // },
+  // {
+  //   _id: '3',
+  //   title: 'Orthodox Christian Education Series',
+  //   date: 'September 5 - October 24, 2023',
+  //   time: 'Tuesdays, 7:00 PM - 8:30 PM',
+  //   location: 'Church Hall',
+  //   description: 'An 8-week series exploring the fundamentals of Orthodox Christianity. Perfect for inquirers, catechumens, and anyone wanting to deepen their understanding of the faith.',
+  //   category: 'education',
+  // },
 ]
 
 export default function SpecialEvents() {
