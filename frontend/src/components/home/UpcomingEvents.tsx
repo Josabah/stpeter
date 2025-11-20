@@ -37,11 +37,26 @@ const fallbackEvents = [
   },
 ]
 
+// Fallback data aligned with SpecialEvents in case API fails
+const fallbackSpecialEvents = [
+  {
+    _id: 'fallback-1',
+    title: 'No special events for now',
+    date: '',
+    time: '',
+    location: '',
+    description: '',
+    category: 'special',
+  },
+]
+
 export default function UpcomingEvents() {
   const { events, loading, error } = useEvents();
   
-  // Use API data if available, otherwise fallback to static data
-  const upcomingEvents = events.length > 0 ? events.slice(0, 3) : fallbackEvents;
+  // Copy SpecialEvents filter: show 'special' or featured (and education as secondary)
+  const specialEvents = events.length > 0 
+    ? events.filter(event => event.category === 'special' || event.featured === true || event.category === 'education').slice(0, 3)
+    : fallbackSpecialEvents;
 
   if (loading) {
     return (
@@ -53,9 +68,9 @@ export default function UpcomingEvents() {
               Join us for our weekly services and community events
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+          <div className="space-y-8 max-w-4xl mx-auto">
             {[...Array(3)].map((_, index) => (
-              <div key={index} className="bg-gray-200 animate-pulse h-48 rounded-lg"></div>
+              <div key={index} className="bg-gray-200 animate-pulse h-32 rounded-lg"></div>
             ))}
           </div>
         </div>
@@ -73,35 +88,42 @@ export default function UpcomingEvents() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-          {upcomingEvents.map((event, index) => (
+        <div className="space-y-8 max-w-4xl mx-auto">
+          {specialEvents.map((event, index) => (
             <motion.div
               key={event._id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow duration-300"
+              className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300"
             >
-              <div className="p-6">
-                <h3 className="text-xl font-bold mb-2">{event.title}</h3>
-                <div className="mb-4">
-                  <p className="text-secondary-600">
-                    <span className="font-medium">Date:</span> {event.date}
-                  </p>
-                  <p className="text-secondary-600">
-                    <span className="font-medium">Time:</span> {event.time}
-                  </p>
-                  <p className="text-secondary-600">
-                    <span className="font-medium">Location:</span> {event.location}
-                  </p>
+              <div className="p-6 md:p-8">
+                <div className="flex flex-col md:flex-row md:items-center justify-between mb-4">
+                  <h3 className="text-2xl font-bold text-primary-700">{event.title}</h3>
+                  <div className="mt-2 md:mt-0 px-4 py-1 bg-accent-100 text-accent-700 rounded-full font-medium text-sm">
+                    {event.date}
+                  </div>
                 </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                  <div>
+                    <p className="text-secondary-600">
+                      <span className="font-medium">Time:</span> {event.time}
+                    </p>
+                  </div>
+                  <div>
+                    <p className="text-secondary-600">
+                      <span className="font-medium">Location:</span> {event.location}
+                    </p>
+                  </div>
+                </div>
+                <p className="text-secondary-700">{event.description}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        <div className="text-center">
+        <div className="text-center mt-10">
           <Link href="/events" className="btn-primary">
             View All Events
           </Link>

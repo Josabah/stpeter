@@ -15,10 +15,10 @@ export default function MissionStatement() {
           <h2 className="heading-2 mb-6">Our Mission</h2>
           <div className="w-20 h-1 bg-primary-600 mx-auto mb-8"></div>
           <p className="text-lg text-secondary-700 mb-6">
-            St. Peter Orthodox Church is dedicated to preserving and sharing the rich traditions of Orthodox Christianity while serving our community with love and compassion.
+           በማህበረ ቅዱሳን ስር በመሆን በ ሰፈረሰላም ግቢ የሚማሩ ተማሪዎች የወንጌል ትምህርትን፣ስርዓትን፣ትውፊትን እንዲያውቁ እና እንዲያቆዩ በማረግ በሀይማኖቱ የፀና በምግባሩ የቀና ንቁ ኦርቶዶክሳዊ ወጣት ማፍራት ነው።
           </p>
           <p className="text-lg text-secondary-700">
-            We strive to create a welcoming environment where individuals and families can grow in their faith, build meaningful relationships, and actively participate in the life of the Church and the broader community.
+           
           </p>
         </motion.div>
       </div>
