@@ -17,10 +17,10 @@ export default function AboutHero() {
           className="max-w-3xl mx-auto text-center"
         >
           <h1 className="text-4xl md:text-5xl font-serif font-bold mb-6">
-            About Our Church test
+            About 
           </h1>
           <p className="text-lg md:text-xl text-secondary-100 mb-4">
-            Discover our history, mission, and the people who make our community special
+            ስለ ጊቢ ጉባኤው ታሪክ እና አስተዳዳሪዎች ለማወቅ
           </p>
         </motion.div>
       </div>

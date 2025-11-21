@@ -18,10 +18,10 @@ export default function Hero() {
           className="max-w-3xl mx-auto text-center"
         >
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold mb-6">
-            testWelcome to St. Peter Orthodox Church
+           እንኳን ወደ ቅዱስ ጴጥሮስ ጊቢ ጉባኤ በ ሰላም መጣቹ
           </h1>
           <p className="text-lg md:text-xl text-primary-100 mb-8">
-            A place of worship, community, and spiritual growth for all who seek to deepen their faith
+           
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/about" className="btn-primary">

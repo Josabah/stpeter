@@ -4,52 +4,52 @@ import { motion } from 'framer-motion'
 const timelineEvents = [
   {
     year: '2005',
-    title: 'Foundation',
+    title: 'ምስረታ',
     description: 'ቅ/ጼጥሮስ እውቅና አጊኝቶ ተመሰረተ ኮርስ፣ፅዋ እና ልዩ መርሐ ግብራት ተጀመረ አብነት ትምህርት ቤት ተቆቆመ መንፈሳዊ ጉዞ',
   },
   {
     year: '2006',
-    title: 'First Divine Liturgy',
+    title: 'መንፈሳዊ ጉዞ',
     description: 'መደበኛ መርሐ ግብራት መጠናከር የተማሪ ቁጥር መጨመር መንፈሳዊ ጉዞ',
   },
   {
     year: '2007',
-    title: 'Land Purchase',
+    title: 'ገቢ ማስገቢያ ስራዎች',
     description: 'ለግቢው ገቢ የሚያስገኙ ቆሚ ፕሮጀክቶችን በመንደፍ ተንቀሳቅሷል።',
   },
   {
     year: '2008',
-    title: 'Church Building',
+    title: 'ዜማ ትምህርት ቤት',
     description: 'አብነቱን በማጠናከር የቁጥር እና ዜማ ት/ቤት ማስከፈት ተችሏል። ኮርስ በኦሮሞኛ መስጠት ተችሏል። የቤተሰብ ምደባ ተጀምሯል። መንፈሳዊ ጉብኝቶች',
   },
   {
     year: '2009',
-    title: 'Community Center',
+    title: 'ስልጣነ ክህነት',
     description: 'ለ ሰባት ተማሪዎች ስልጣነ ክህነት ማሰጠት ችሏል። መደበኛ መርሐ ግብራት መጠናከር መንፈሳዊ ጉዞ',
   },
   {
     year: '2010&11',
-    title: 'Iconography Project',
+    title: 'መርሀ ግብራት መጠንከር',
     description: 'መደበኛ መርሐ ግብራት መጠናከር መንፈሳዊ ጉዞ',
   },
   {
     year: '2012',
-    title: 'Digital Ministry',
+    title: 'የቤተሰብ መዋቅር',
     description: 'የቤተሰብ መዋቅር በአዲስ መልክአደራጅቶ መንቀሳቀስ ተችሏል። መደበኛ መርሐ ግብራት መጠናከር መንፈሳዊ ጉዞ',
   },
   {
     year: '2014',
-    title: 'Growing Community',
+    title: 'በገና ትምህርት ቤት',
     description: '4ተተኪ መምህራን በደረጃ 1 እና 1ተማሪ በደረጃ 2 አሰልጥኗል የበገና ትምህርት ቤቱን አስከፍቷል።',
   },
   {
     year: '2015',
-    title: 'Growing Community',
+    title: 'መምህራን ስልጠና',
     description: '8 በደረጃ 1 ተተኪ መምህራንን አስመርቆል ቅዱሳት መካናት ጉብኝት',
   },
    {
     year: '2016',
-    title: 'Growing Community',
+    title: 'ኮርስ በተለያዩ ቋንቋዎች',
     description: 'ሎከር ማሰራት ተችሏል የ ቅድሳት ስዕላት እና በገና ግዢ ተደርጓል በተለያዩ ቆንቆዎች ኮርስ ተሰጥቶል',
   },
 ]

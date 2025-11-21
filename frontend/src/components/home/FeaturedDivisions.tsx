@@ -86,7 +86,7 @@ export default function FeaturedDivisions() {
           <div className="text-center mb-12">
             <h2 className="heading-2 mb-4">Our Divisions</h2>
             <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Explore the various ministries and divisions that make up our church community
+              የጊቢ ጉባኤያችን የተለያዩ የስራ ክፍፍሎች
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

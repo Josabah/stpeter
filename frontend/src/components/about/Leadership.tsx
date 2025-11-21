@@ -54,7 +54,7 @@ export default function Leadership() {
         <div className="text-center mb-12">
           <h2 className="heading-2 mb-4">Our Leadership</h2>
           <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-            Meet the dedicated individuals who guide our parish community
+            ጊቢ ጉባኤው ሳይስተጓጎል ስራውን እንዲያስኬድ እያደረጉ ያሉ አመራሮች
           </p>
         </div>
 

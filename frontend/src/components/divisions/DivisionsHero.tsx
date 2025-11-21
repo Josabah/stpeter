@@ -20,7 +20,7 @@ export default function DivisionsHero() {
             Our Divisions
           </h1>
           <p className="text-lg md:text-xl text-primary-100 mb-4">
-            Explore the various ministries and service divisions that make up our church community
+           የጊቢ ጉባኤውን የተለያዩ የስራ ክፍፍሎች ይጎብኙ
           </p>
         </motion.div>
       </div>
