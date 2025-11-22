@@ -28,7 +28,7 @@ export default function Header() {
             <span className="sr-only">ቅዱስ ጴጥሮስ ጊቢ ጉባኤ</span>
             <div className="h-10 w-auto flex items-center">
               {/* Replace with your actual logo */}
-              <span className="text-xl font-serif font-bold text-primary-700">St. Peter Orthodox Church</span>
+              <span className="text-xl font-serif font-bold text-primary-700">ቅዱስ ጴጥሮስ ጊቢ ጉባኤ</span>
             </div>
           </Link>
         </div>

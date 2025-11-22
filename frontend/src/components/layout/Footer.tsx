@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { FaFacebook, FaInstagram, FaYoutube, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
+import { FaTelegram, FaInstagram, FaYoutube, FaEnvelope, FaPhone, FaMapMarkerAlt } from 'react-icons/fa'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()
@@ -15,13 +15,13 @@ export default function Footer() {
               
             </p>
             <div className="flex space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-secondary-300 hover:text-white transition-colors">
-                <FaFacebook size={20} />
+              <a href="https://t.me/kidus_petros_mereja" target="_blank" rel="noopener noreferrer" className="text-secondary-300 hover:text-white transition-colors">
+                <FaTelegram size={20} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-secondary-300 hover:text-white transition-colors">
+              <a href="https://www.instagram.com/kidus_petros_gibi_gubae?igsh=eGg1YzV1bzV4ZGhq" target="_blank" rel="noopener noreferrer" className="text-secondary-300 hover:text-white transition-colors">
                 <FaInstagram size={20} />
               </a>
-              <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" className="text-secondary-300 hover:text-white transition-colors">
+              <a href="https://youtube.com/channel/UCf9ULIkZg3Hlu_KryEOfrjg?si=qDZKtjFAPZUsw5V4" target="_blank" rel="noopener noreferrer" className="text-secondary-300 hover:text-white transition-colors">
                 <FaYoutube size={20} />
               </a>
             </div>
@@ -70,16 +70,16 @@ export default function Footer() {
             <ul className="space-y-3">
               <li className="flex items-start">
                 <FaMapMarkerAlt className="text-primary-500 mt-1 mr-3 flex-shrink-0" />
-                <span className="text-secondary-300">123 Church Street, City, State 12345</span>
+                <span className="text-secondary-300">CHS Sefere selam</span>
               </li>
               <li className="flex items-center">
                 <FaPhone className="text-primary-500 mr-3 flex-shrink-0" />
-                <span className="text-secondary-300">(123) 456-7890</span>
+                <span className="text-secondary-300">0946406302 or 0972547887</span>
               </li>
               <li className="flex items-center">
                 <FaEnvelope className="text-primary-500 mr-3 flex-shrink-0" />
                 <a href="mailto:info@stpeterorthodox.org" className="text-secondary-300 hover:text-white transition-colors">
-                  info@stpeterorthodox.org
+                  t.me/gibi_gubae_hasab_bot
                 </a>
               </li>
             </ul>
