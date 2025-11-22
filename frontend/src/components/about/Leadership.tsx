@@ -59,7 +59,7 @@ export default function Leadership() {
               </div>
 
               <div className="p-6">
-                <h3 className="text-xl font-bold mb-1">{leader.name}</h3>
+                <h3 className="text-xl font-bold mb-1 text-secondary-900">{leader.name}</h3>
                 <p className="text-primary-600 font-medium mb-3">
                   {leader.title}
                 </p>
