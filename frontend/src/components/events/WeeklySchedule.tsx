@@ -76,7 +76,7 @@ export default function WeeklySchedule() {
                     {daySchedule.events.map((event, eventIndex) => (
                       <li key={eventIndex} className="border-b border-gray-100 pb-3 last:border-0 last:pb-0">
                         <p className="font-bold text-primary-700">{event.time}</p>
-                        <p className="font-medium">{event.title}</p>
+                        <p className="font-medium text-secondary-900">{event.title}</p>
                         <p className="text-sm text-secondary-500">{event.location}</p>
                       </li>
                     ))}
