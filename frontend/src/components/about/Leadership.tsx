@@ -7,7 +7,7 @@ const leadershipTeam = [
     name: 'Fr. John Christodoulos',
     title: 'Parish Priest',
     bio: 'Fr. John has served our parish for over 15 years, bringing wisdom and compassion to his ministry.',
-    image: '/frontend/2016lead.jpg',
+    image: '/images/2016lead.jpg',
     social: {
       email: 'frjohn@stpeterorthodox.org',
       facebook: 'https://facebook.com',
@@ -17,7 +17,7 @@ const leadershipTeam = [
     name: 'Michael Stephanopoulos',
     title: 'Parish Council President',
     bio: 'Michael has been an active member of our community for 20 years and leads our parish council.',
-    image: '/frontend/2017lead.jpg',
+    image: '/images/2017lead.jpg',
     social: {
       email: 'council@stpeterorthodox.org',
       facebook: 'https://facebook.com',
