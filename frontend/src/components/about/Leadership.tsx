@@ -15,9 +15,9 @@ const leadershipTeam = [
     },
   },
   {
-    name: "የ 2016 ስራ አስፈፃሚዎች",
+    name: "የ 2017 ስራ አስፈፃሚዎች",
     title: "አገልጋዮች",
-    bio: " በ 2016 ላይ ጊቢ ጉባኤው ስራውን ያለማቋረጥ እንዲያደርግ ሲሰሩ የነበሩ አገልጋዮች።",
+    bio: " በ 2017 ላይ ጊቢ ጉባኤው ስራውን ያለማቋረጥ እንዲያደርግ ሲሰሩ የነበሩ አገልጋዮች።",
     image: "/images/2017lead.jpg",
     social: {
       email: "council@stpeterorthodox.org",

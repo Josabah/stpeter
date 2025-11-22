@@ -5,7 +5,7 @@ const weeklyEvents = [
   {
     day: 'እሑድ',
     events: [
-      { time: '7:30 - 10:30 LT', title: 'የአብነት ትምህርት & የመዝሙር ጥናት', location: 'Main Church' },
+      { time: '7:30 - 10:30 LT', title: 'የአብነት ትምህርት & የመዝሙር ጥናት', location: '' },
     ],
   },
   {
@@ -91,7 +91,7 @@ export default function WeeklySchedule() {
 
         <div className="mt-12 p-6 bg-secondary-50 rounded-lg">
           <p className="text-center text-secondary-600">
-            <span className="font-medium">Note:</span> Schedule may change during major feast days and holidays. Please check our announcements or contact the church office for the most up-to-date information.
+            <span className="font-medium">Note:</span> Schedule may change during major feast days and holidays. Please check our announcements for the most up-to-date information.
           </p>
         </div>
       </div>
