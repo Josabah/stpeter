@@ -14,7 +14,7 @@ import {
   XMarkIcon
 } from '@heroicons/react/24/outline';
 
-type AdminView = 'dashboard' | 'divisions' | 'events' | 'gallery' | 'contact' | 'users';
+type AdminView = 'events' | 'gallery' | 'users';
 
 interface AdminSidebarProps {
   currentView: AdminView;
@@ -25,11 +25,8 @@ export default function AdminSidebar({ currentView, setCurrentView }: AdminSideb
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
 
   const navItems = [
-    { id: 'dashboard', name: 'Dashboard', icon: HomeIcon },
-    { id: 'divisions', name: 'Divisions', icon: UserGroupIcon },
     { id: 'events', name: 'Events', icon: CalendarIcon },
     { id: 'gallery', name: 'Gallery', icon: PhotoIcon },
-    { id: 'contact', name: 'Contact Messages', icon: EnvelopeIcon },
     { id: 'users', name: 'Users', icon: UsersIcon },
   ];
 

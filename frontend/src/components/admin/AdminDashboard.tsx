@@ -3,35 +3,29 @@
 import { useState } from 'react';
 import AdminSidebar from './AdminSidebar';
 import AdminHeader from './AdminHeader';
-import DashboardHome from './DashboardHome';
-import DivisionsManager from './DivisionsManager';
+// Removed: import DashboardHome from './DashboardHome';
+// Removed: import DivisionsManager from './DivisionsManager';
 import EventsManager from './EventsManager';
 import GalleryManager from './GalleryManager';
-import ContactManager from './ContactManager';
+// Removed: import ContactManager from './ContactManager';
 import UsersManager from './UsersManager';
 
-type AdminView = 'dashboard' | 'divisions' | 'events' | 'gallery' | 'contact' | 'users';
+type AdminView = 'events' | 'gallery' | 'users';
 
 export default function AdminDashboard() {
-  const [currentView, setCurrentView] = useState<AdminView>('dashboard');
+  const [currentView, setCurrentView] = useState<AdminView>('events');
   
   // Function to render the current view
   const renderView = () => {
     switch (currentView) {
-      case 'dashboard':
-        return <DashboardHome />;
-      case 'divisions':
-        return <DivisionsManager />;
       case 'events':
         return <EventsManager />;
       case 'gallery':
         return <GalleryManager />;
-      case 'contact':
-        return <ContactManager />;
       case 'users':
         return <UsersManager />;
       default:
-        return <DashboardHome />;
+        return <EventsManager />;
     }
   };
 

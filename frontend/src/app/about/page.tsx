@@ -2,7 +2,7 @@ import AboutHero from '@/components/about/AboutHero'
 import OurStory from '@/components/about/OurStory'
 import Timeline from '@/components/about/Timeline'
 import Leadership from '@/components/about/Leadership'
-// import Beliefs from '@/components/about/Beliefs'
+import Beliefs from '@/components/about/Beliefs'
 
 export const metadata = {
   title: 'About Us | St. Peter Orthodox Church',
@@ -16,7 +16,7 @@ export default function AboutPage() {
       <OurStory />
       <Timeline />
       <Leadership />
-      {/* Beliefs section removed per request */}
+      <Beliefs />
     </div>
   )
 }
