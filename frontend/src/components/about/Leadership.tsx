@@ -9,21 +9,21 @@ const leadershipTeam = [
     title: "አገልጋዮች",
     bio: "በ 2016 ላይ ጊቢ ጉባኤው ስራውን ያለማቋረጥ እንዲያደርግ ሲሰሩ የነበሩ አገልጋዮች።",
     image: "/images/2016lead.jpg",
-    // social: {
-    //   email: "frjohn@stpeterorthodox.org",
-    //   facebook: "https://facebook.com",
-    // },
+    social: {
+      email: "frjohn@stpeterorthodox.org",
+      facebook: "https://facebook.com",
+    },
   },
   {
     name: "የ 2016 ስራ አስፈፃሚዎች",
     title: "አገልጋዮች",
     bio: " በ 2016 ላይ ጊቢ ጉባኤው ስራውን ያለማቋረጥ እንዲያደርግ ሲሰሩ የነበሩ አገልጋዮች።",
     image: "/images/2017lead.jpg",
-    // social: {
-    //   email: "council@stpeterorthodox.org",
-    //   facebook: "https://facebook.com",
-    //   twitter: "https://twitter.com",
-    // },
+    social: {
+      email: "council@stpeterorthodox.org",
+      facebook: "https://facebook.com",
+      twitter: "https://twitter.com",
+    },
   },
 ];
 
@@ -58,7 +58,7 @@ export default function Leadership() {
                 />
               </div>
 
-              {/* <div className="p-6">
+              <div className="p-6">
                 <h3 className="text-xl font-bold mb-1 text-secondary-900">{leader.name}</h3>
                 <p className="text-primary-600 font-medium mb-3">
                   {leader.title}
@@ -80,8 +80,8 @@ export default function Leadership() {
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-secondary-400 hover:text-primary-600 transition-colors"
-                    > */}
-                      {/* <FaFacebook size={18} />
+                    >
+                      <FaFacebook size={18} />
                     </a>
                   )}
                   {leader.social.twitter && (
@@ -94,7 +94,7 @@ export default function Leadership() {
                       <FaTwitter size={18} />
                     </a>
                   )}
-                </div> */}
+                </div>
               </div>
             </motion.div>
           ))}
