@@ -182,7 +182,7 @@ export default function DivisionsList() {
         </motion.div>
 
         <div className="mt-16 text-center">
-          <h3 className="text-2xl font-serif font-bold mb-4">Get Involved</h3>
+          <h3 className="text-2xl font-serif font-bold mb-4 text-secondary-900">Get Involved</h3>
           <p className="text-lg text-secondary-600 max-w-2xl mx-auto mb-8">
             We welcome all members to participate in our church divisions. If you're interested in serving in any of these areas, please contact us.
           </p>
