@@ -10,9 +10,9 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* About */}
           <div>
-            <h3 className="text-xl font-serif font-bold mb-4">St. Peter Orthodox Church</h3>
+            <h3 className="text-xl font-serif font-bold mb-4">ቅዱስ ጴጥሮስ ጊቢ ጉባኤ</h3>
             <p className="text-secondary-300 mb-4">
-              Serving the community with faith, love, and compassion since 1975.
+              
             </p>
             <div className="flex space-x-4">
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-secondary-300 hover:text-white transition-colors">
@@ -87,7 +87,7 @@ export default function Footer() {
         </div>
 
         <div className="border-t border-secondary-800 mt-12 pt-6 text-center text-secondary-400">
-          <p>&copy; {currentYear} St. Peter Orthodox Church. All rights reserved.</p>
+          <p>&copy; {currentYear} ቅዱስ ጴጥሮስ ጊቢ ጉባኤ. All rights reserved.</p>
         </div>
       </div>
     </footer>

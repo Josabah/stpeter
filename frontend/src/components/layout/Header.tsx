@@ -25,7 +25,7 @@ export default function Header() {
       <nav className="container-custom flex items-center justify-between py-4" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link href="/" className="-m-1.5 p-1.5">
-            <span className="sr-only">St. Peter Orthodox Church</span>
+            <span className="sr-only">ቅዱስ ጴጥሮስ ጊቢ ጉባኤ</span>
             <div className="h-10 w-auto flex items-center">
               {/* Replace with your actual logo */}
               <span className="text-xl font-serif font-bold text-primary-700">St. Peter Orthodox Church</span>
@@ -77,7 +77,7 @@ export default function Header() {
         <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
             <Link href="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
-              <span className="sr-only">St. Peter Orthodox Church</span>
+              <span className="sr-only">ቅዱስ ጴጥሮስ ጊቢ ጉባኤ</span>
               <div className="h-8 w-auto">
                 <span className="text-lg font-serif font-bold text-primary-700">St. Peter Orthodox Church</span>
               </div>
