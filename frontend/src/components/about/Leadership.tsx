@@ -1,7 +1,7 @@
 "use client";
 import { motion } from "framer-motion";
 import Image from "next/image";
-// import { FaFacebook, FaTwitter, FaEnvelope } from "react-icons/fa";
+import { FaFacebook, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const leadershipTeam = [
   {
@@ -10,8 +10,8 @@ const leadershipTeam = [
     bio: "በ 2016 ላይ ጊቢ ጉባኤው ስራውን ያለማቋረጥ እንዲያደርግ ሲሰሩ የነበሩ አገልጋዮች።",
     image: "/images/2016lead.jpg",
     social: {
-      email: " ",
-      facebook: " ",
+      email: "frjohn@stpeterorthodox.org",
+      facebook: "https://facebook.com",
     },
   },
   {
@@ -20,9 +20,9 @@ const leadershipTeam = [
     bio: " በ 2017 ላይ ጊቢ ጉባኤው ስራውን ያለማቋረጥ እንዲያደርግ ሲሰሩ የነበሩ አገልጋዮች።",
     image: "/images/2017lead.jpg",
     social: {
-      email: " ",
-      facebook: " ",
-      twitter: " ",
+      email: "council@stpeterorthodox.org",
+      facebook: "https://facebook.com",
+      twitter: "https://twitter.com",
     },
   },
 ];

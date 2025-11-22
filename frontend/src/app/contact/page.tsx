@@ -2,7 +2,7 @@ import { Metadata } from 'next';
 import ContactHero from '@/components/contact/ContactHero';
 import ContactForm from '@/components/contact/ContactForm';
 import ContactInfo from '@/components/contact/ContactInfo';
-import Map from '@/components/contact/Map';
+// import Map from '@/components/contact/Map';
 
 export const metadata: Metadata = {
   title: 'Contact Us | St. Peter Orthodox Church',
