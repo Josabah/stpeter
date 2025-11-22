@@ -65,7 +65,7 @@ export default function UpcomingEvents() {
           <div className="text-center mb-12">
             <h2 className="heading-2 mb-4">Upcoming Events</h2>
             <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Join us for our weekly services and community events
+              ሳምንታዊ ፕሮግራሞቻችንን እና ሌሎች መርሀ ግብሮችን ይከታተሉ
             </p>
           </div>
           <div className="space-y-8 max-w-4xl mx-auto">

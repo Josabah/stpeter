@@ -127,7 +127,7 @@ export default function DivisionsList() {
           <div className="text-center mb-12">
             <h2 className="heading-2 mb-4">Our Service Divisions</h2>
             <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-              Learn about the various ministries that serve our church and community
+              {/* Learn about the various ministries that serve our church and community */}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -184,7 +184,7 @@ export default function DivisionsList() {
         <div className="mt-16 text-center">
           <h3 className="text-2xl font-serif font-bold mb-4 text-secondary-900">Get Involved</h3>
           <p className="text-lg text-secondary-600 max-w-2xl mx-auto mb-8">
-            We welcome all members to participate in our church divisions. If you're interested in serving in any of these areas, please contact us.
+           በተለያዩ የስራ ዘርፎች ላይ ማገልገል ፈቃደኛ ከሆናቹ, please contact us.
           </p>
           <button className="btn-primary">
             Contact Us to Volunteer

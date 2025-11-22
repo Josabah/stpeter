@@ -20,7 +20,7 @@ export default function EventsHero() {
             Events & Schedule
           </h1>
           <p className="text-lg md:text-xl text-accent-100 mb-4">
-            Join us for weekly services and special events throughout the year
+            የሳምንታዊ እና የተለያዩ መርሀግብሮችን ይጎብኙ
           </p>
         </motion.div>
       </div>

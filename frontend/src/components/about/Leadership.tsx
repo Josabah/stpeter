@@ -5,25 +5,25 @@ import { FaFacebook, FaTwitter, FaEnvelope } from "react-icons/fa";
 
 const leadershipTeam = [
   {
-    name: "Fr. John Christodoulos",
-    title: "Parish Priest",
-    bio: "Fr. John has served our parish for over 15 years, bringing wisdom and compassion to his ministry.",
+    name: "የ 2016 ስራ አስፈፃሚዎች",
+    title: "አገልጋዮች",
+    bio: "በ 2016 ላይ ጊቢ ጉባኤው ስራውን ያለማቋረጥ እንዲያደርግ ሲሰሩ የነበሩ አገልጋዮች።",
     image: "/images/2016lead.jpg",
-    social: {
-      email: "frjohn@stpeterorthodox.org",
-      facebook: "https://facebook.com",
-    },
+    // social: {
+    //   email: "frjohn@stpeterorthodox.org",
+    //   facebook: "https://facebook.com",
+    // },
   },
   {
-    name: "Michael Stephanopoulos",
-    title: "Parish Council President",
-    bio: "Michael has been an active member of our community for 20 years and leads our parish council.",
+    name: "የ 2016 ስራ አስፈፃሚዎች",
+    title: "አገልጋዮች",
+    bio: " በ 2016 ላይ ጊቢ ጉባኤው ስራውን ያለማቋረጥ እንዲያደርግ ሲሰሩ የነበሩ አገልጋዮች።",
     image: "/images/2017lead.jpg",
-    social: {
-      email: "council@stpeterorthodox.org",
-      facebook: "https://facebook.com",
-      twitter: "https://twitter.com",
-    },
+    // social: {
+    //   email: "council@stpeterorthodox.org",
+    //   facebook: "https://facebook.com",
+    //   twitter: "https://twitter.com",
+    // },
   },
 ];
 

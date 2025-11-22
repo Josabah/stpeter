@@ -11,37 +11,37 @@ const weeklyEvents = [
   {
     day: 'ሰኞ',
     events: [
-      { time: '11:45 LT', title: 'የ3ተኛ & የ4ተኛ ዓመቶች ኮርስ', location: 'Church Hall' },
+      { time: '11:45 LT', title: 'የ3ተኛ & የ4ተኛ ዓመቶች ኮርስ', location: '' },
     ],
   },
    {
     day: 'ማክሰኞ',
     events: [
-      { time: '', title: 'የመዝሙር ጥናት', location: 'Church Hall' },
+      { time: '11:45 LT', title: 'የመዝሙር ጥናት', location: '' },
     ],
   },
   {
     day: 'ረቡዕ',
     events: [
-      { time: '11:45 LT', title: 'የ1ኛ ዓመቶች ኮርስ', location: 'Main Church' },
+      { time: '11:45 LT', title: 'የ1ኛ ዓመቶች ኮርስ', location: '' },
     ],
   },
   {
     day: 'ኀሙስ',
     events: [
-      { time: '11:45 LT', title: 'የ2ተኛ ዓመቶች ኮርስ', location: 'Main Church' },
+      { time: '11:45 LT', title: 'የ2ተኛ ዓመቶች ኮርስ', location: '' },
     ],
   },
   {
     day: 'ዓርብ',
     events: [
-      { time: '11:45 LT', title: 'የአንድነት መርሐግብር', location: 'Youth Center' },
+      { time: '11:45 LT', title: 'የአንድነት መርሐግብር', location: '' },
     ],
   },
   {
     day: 'Saturday',
     events: [
-      { time: '7:30 - 10:30 LT', title: 'የአብነት ትምህርት & የበገና መዝሙር ጥናት', location: 'Main Church' },
+      { time: '7:30 - 10:30 LT', title: 'የአብነት ትምህርት & የበገና መዝሙር ጥናት', location: '' },
     ],
   },
 ]
@@ -53,7 +53,7 @@ export default function WeeklySchedule() {
         <div className="text-center mb-12">
           <h2 className="heading-2 mb-4">Weekly Schedule</h2>
           <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-            Our regular weekly services and activities
+            መደበኛ ሳምንታዊ መርሀ ግብሮች
           </p>
         </div>
 

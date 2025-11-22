@@ -88,14 +88,14 @@ export default function SpecialEvents() {
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        {/* <div className="mt-12 text-center">
           <p className="text-lg text-secondary-600 max-w-2xl mx-auto mb-6">
             Stay updated with our latest events by subscribing to our newsletter or following us on social media.
           </p>
           <button className="btn-primary">
             Subscribe to Updates
           </button>
-        </div>
+        </div> */}
       </div>
     </section>
   )
