@@ -61,7 +61,7 @@ export default function Timeline() {
         <div className="text-center mb-12">
           <h2 className="heading-2 mb-4">Our Journey</h2>
           <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-            Key milestones in the history of St. Peter Orthodox Church
+            
           </p>
         </div>
 
