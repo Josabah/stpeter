@@ -173,7 +173,7 @@ export default function DivisionsList() {
                   <IconComponent size={40} />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold mb-3">{division.name || division.title}</h3>
+                  <h3 className="text-xl font-bold mb-3 text-secondary-900">{division.name || division.title}</h3>
                   <p className="text-secondary-600">{division.description}</p>
                 </div>
               </motion.div>
