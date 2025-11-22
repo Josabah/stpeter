@@ -20,8 +20,8 @@ export default function Map() {
         {/* Placeholder for map */}
         <div className="absolute inset-0 flex items-center justify-center">
           <p className="text-gray-500 text-center">
-            Interactive map would be displayed here.<br />
-            Using Leaflet.js or Google Maps API integration.
+            {/* Interactive map would be displayed here.<br /> */}
+            {/* Using Leaflet.js or Google Maps API integration. */}
           </p>
         </div>
         
@@ -32,7 +32,7 @@ export default function Map() {
       </div>
       
       <div className="mt-4 text-center text-gray-600">
-        <p>123 Main Street, Anytown, ST 12345</p>
+        {/* <p>123 Main Street, Anytown, ST 12345</p> */}
         <p className="mt-2">
           <a 
             href="https://maps.google.com" 
@@ -40,7 +40,7 @@ export default function Map() {
             rel="noopener noreferrer"
             className="text-primary hover:underline"
           >
-            Get Directions
+            {/* Get Directions */}
           </a>
         </p>
       </div>

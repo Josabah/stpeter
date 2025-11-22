@@ -51,14 +51,14 @@ export default function ContactInfo() {
         </div> */}
       </div>
       
-      // <div className="mt-8 pt-6 border-t border-gray-200">
+      {/* // <div className="mt-8 pt-6 border-t border-gray-200">
       //   <h3 className="font-bold text-gray-800 mb-3">Office Hours</h3>
       //   <ul className="text-gray-600 space-y-1">
       //     <li><span className="font-medium">Monday - Friday:</span> 9:00 AM - 4:00 PM</li>
       //     <li><span className="font-medium">Saturday:</span> 10:00 AM - 2:00 PM</li>
       //     <li><span className="font-medium">Sunday:</span> 9:00 AM - 1:00 PM</li>
       //   </ul>
-      // </div>
+      // </div> */}
     </motion.div>
   );
 }
