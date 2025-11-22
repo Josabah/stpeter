@@ -444,10 +444,10 @@ export default function EventsManager() {
                         className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-primary-500 focus:border-primary-500"
                         required
                       >
-                        <option value="worship">Worship</option>
+                        
                         <option value="special">Special Event</option>
                         <option value="education">Education</option>
-                        <option value="youth">Youth</option>
+                        <option value="charity">charity</option>
                         <option value="community">Community</option>
                         <option value="other">Other</option>
                       </select>
