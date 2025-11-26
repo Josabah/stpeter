@@ -156,7 +156,7 @@ export default function DivisionsList() {
         <div className="text-center mb-12">
           <h2 className="heading-2 mb-4">Our Service Divisions</h2>
           <p className="text-lg text-secondary-600 max-w-2xl mx-auto">
-            Learn about the various ministries that serve our church and community
+            
           </p>
         </div>
 
