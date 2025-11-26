@@ -11,7 +11,7 @@ const weeklyEvents = [
   {
     day: 'ሰኞ',
     events: [
-      { time: '11:45 LT', title: 'የ3ተኛ & የ4ተኛ ዓመቶች ኮርስ', location: '' },
+      { time: '11:45 LT', title: 'የ3ተኛ ዓመቶች ኮርስ', location: '' },
     ],
   },
    {
@@ -23,13 +23,13 @@ const weeklyEvents = [
   {
     day: 'ረቡዕ',
     events: [
-      { time: '11:45 LT', title: 'የ1ኛ ዓመቶች ኮርስ', location: '' },
+      { time: '11:45 LT', title: 'የ4ተኛ ዓመቶች ኮርስ', location: '' },
     ],
   },
   {
     day: 'ኀሙስ',
     events: [
-      { time: '11:45 LT', title: 'የ2ተኛ ዓመቶች ኮርስ', location: '' },
+      { time: '11:45 LT', title: 'የ1ኛ & የ2ተኛ ዓመቶች ኮርስ', location: '' },
     ],
   },
   {
