@@ -19,7 +19,7 @@ const merriweather = Merriweather({
 })
 
 export const metadata: Metadata = {
-  title: 'St. Peter Orthodox Church',
+  title: 'St. Peter gebi gubae',
   description: 'A modern Orthodox church serving the community with faith and love',
 }
 

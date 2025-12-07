@@ -20,7 +20,7 @@ export default function DivisionsHero() {
             Our Divisions
           </h1>
           <p className="text-lg md:text-xl text-primary-100 mb-4">
-           የጊቢ ጉባኤውን የተለያዩ የስራ ክፍፍሎች ይጎብኙ
+           የጊቢ ጉባኤውን የተለያዩ የአገልግሎት ክፍፍሎች ይጎብኙ
           </p>
         </motion.div>
       </div>
