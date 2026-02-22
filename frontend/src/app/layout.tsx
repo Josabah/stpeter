@@ -19,9 +19,24 @@ const merriweather = Merriweather({
 })
 
 export const metadata: Metadata = {
-  title: 'St. Peter gebi gubae',
-  description: 'A modern Orthodox church serving the community with faith and love',
-}
+  title: {
+    default: 'kidus petros gibi gubae – Gebi Gubae',
+    template: '%s | St. Peter Orthodox gibi gubae',
+  },
+  description:
+    'Official website of kidus petros gibi gubae (Gebi Gubae). Service times, history, events, and Orthodox Christian faith.',
+  keywords: [
+    'kidus petros gibi gubae',
+    'Gibi Gubae petros',
+    'st peter gibi gubae',
+    'gibi gubae betekrstian',
+    'orthodox gibi gubae',
+  ],
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function RootLayout({
   children,
