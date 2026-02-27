@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
-  title: 'Home',
+  title: 'kidus petros gibi gubae',
   description:
     'Welcome to kidus petros Gibi Gubae. Learn about our mission, services, events, and Orthodox Christian faith.',
 };
