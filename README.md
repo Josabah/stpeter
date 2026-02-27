@@ -1,6 +1,5 @@
-# St. Peter Orthodox Church Website
+# St. Peter 
 
-A modern, responsive website for an Orthodox church organization built with Next.js, TailwindCSS, Node.js, Express, and MongoDB.
 
 ## Features
 
