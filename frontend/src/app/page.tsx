@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       <h1 className="sr-only">
-        St. Peter Orthodox Church – Gebi Gubae
+        St. Peter  Gebi Gubae
       </h1>
 
       <Hero />
