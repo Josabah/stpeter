@@ -56,3 +56,19 @@ export default function RootLayout({
     </html>
   )
 }
+openGraph: {
+    title: 'Kidus Petros Gibi Gubae',
+    description:
+      'Official website of Kidus Petros Gibi Gubae. Service times, history, and events.',
+    url: 'https://stpeter.vercel.app',
+    siteName: 'St Peter Church',
+    images: [
+      {
+        url: '/og-image.jpg', // IMPORTANT: this must exist in /public
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
+  },
+};
