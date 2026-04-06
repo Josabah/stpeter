@@ -25,6 +25,7 @@ export const metadata: Metadata = {
   },
   description:
     'Official website of kidus petros gibi gubae (Gebi Gubae). Service times, history, events, and Orthodox Christian faith.',
+
   keywords: [
     'kidus petros gibi gubae',
     'Gibi Gubae petros',
@@ -32,9 +33,27 @@ export const metadata: Metadata = {
     'gibi gubae betekrstian',
     'orthodox gibi gubae',
   ],
+
   robots: {
     index: true,
     follow: true,
+  },
+
+  // ✅ ADDED HERE (correct place)
+  openGraph: {
+    title: 'Kidus Petros Gibi Gubae',
+    description:
+      'Official website of Kidus Petros Gibi Gubae. Service times, history, and events.',
+    url: 'https://stpeter.vercel.app',
+    siteName: 'St Peter Church',
+    images: [
+      {
+        url: '/og-image.jpg', // or '/images/og-image.jpg'
+        width: 1200,
+        height: 630,
+      },
+    ],
+    type: 'website',
   },
 };
 
@@ -56,19 +75,3 @@ export default function RootLayout({
     </html>
   )
 }
-openGraph: {
-    title: 'Kidus Petros Gibi Gubae',
-    description:
-      'Official website of Kidus Petros Gibi Gubae. Service times, history, and events.',
-    url: 'https://stpeter.vercel.app',
-    siteName: 'St Peter Church',
-    images: [
-      {
-        url: '/og-image.jpg', // IMPORTANT: this must exist in /public
-        width: 1200,
-        height: 630,
-      },
-    ],
-    type: 'website',
-  },
-};
