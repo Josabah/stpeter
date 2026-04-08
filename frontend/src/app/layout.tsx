@@ -3,15 +3,25 @@ import { Inter, Merriweather } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/layout/Header'
 import Footer from '@/components/layout/Footer'
+import SiteJsonLd from '@/components/seo/siteJsonLd'
 import { Toaster } from 'react-hot-toast'
+import { originalMeta, siteConfig, siteUrl } from '@/lib/site'
 
-const inter = Inter({ 
+/** `public/og-image.jpg` — Ethiopian Orthodox icon of Kidus Petros (640×640). */
+const ogImage = {
+  url: '/og-image.jpg',
+  width: 640,
+  height: 640,
+  alt: 'ቅዱስ ጴጥሮስ — Ethiopian Orthodox icon of Saint Peter (Kidus Petros)',
+} as const
+
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   variable: '--font-inter',
 })
 
-const merriweather = Merriweather({ 
+const merriweather = Merriweather({
   weight: ['300', '400', '700', '900'],
   subsets: ['latin'],
   display: 'swap',
@@ -19,43 +29,33 @@ const merriweather = Merriweather({
 })
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: 'kidus petros gibi gubae – Gebi Gubae',
-    template: '%s | St. Peter Orthodox gibi gubae',
+    default: siteConfig.metaTitleDefault,
+    template: `%s | ${siteConfig.metaTitleTemplate}`,
   },
-  description:
-    'Official website of kidus petros gibi gubae (Gebi Gubae). Service times, history, events, and Orthodox Christian faith.',
-
-  keywords: [
-    'kidus petros gibi gubae',
-    'Gibi Gubae petros',
-    'st peter gibi gubae',
-    'gibi gubae betekrstian',
-    'orthodox gibi gubae',
-  ],
-
+  description: siteConfig.defaultDescription,
+  keywords: [...siteConfig.keywords],
   robots: {
     index: true,
     follow: true,
   },
-
-  // ✅ ADDED HERE (correct place)
   openGraph: {
-    title: 'Kidus Petros Gibi Gubae',
-    description:
-      'Official website of Kidus Petros Gibi Gubae. Service times, history, and events.',
-    url: 'https://stpeter.vercel.app',
-    siteName: 'St Peter Church',
-    images: [
-      {
-        url: '/og-image.jpg', // or '/images/og-image.jpg'
-        width: 1200,
-        height: 630,
-      },
-    ],
+    title: originalMeta.layoutOpenGraph.title,
+    description: originalMeta.layoutOpenGraph.description,
+    url: siteUrl,
+    siteName: siteConfig.openGraphSiteName,
+    locale: 'am_ET',
     type: 'website',
+    images: [ogImage],
   },
-};
+  twitter: {
+    card: 'summary_large_image',
+    title: originalMeta.layoutOpenGraph.title,
+    description: originalMeta.layoutOpenGraph.description,
+    images: [ogImage.url],
+  },
+}
 
 export default function RootLayout({
   children,
@@ -63,12 +63,11 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${merriweather.variable}`}>
+    <html lang="am" className={`${inter.variable} ${merriweather.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <SiteJsonLd />
         <Header />
-        <main className="flex-grow">
-          {children}
-        </main>
+        <main className="flex-grow">{children}</main>
         <Footer />
         <Toaster position="bottom-right" />
       </body>

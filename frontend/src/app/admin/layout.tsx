@@ -2,8 +2,13 @@ import type { Metadata } from 'next'
 import '../globals.css'
 
 export const metadata: Metadata = {
-  title: 'Admin Dashboard | St. Peter Orthodox Church',
-  description: 'Admin dashboard for managing church content',
+  title: 'Admin',
+  description: 'Internal admin dashboard',
+  robots: {
+    index: false,
+    follow: false,
+    googleBot: { index: false, follow: false },
+  },
 }
 
 export default function AdminLayout({

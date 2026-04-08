@@ -17,19 +17,15 @@ const iconMap: { [key: string]: any } = {
   'default': FaPrayingHands,
 };
 
-// Color mapping for divisions (reuse existing theme tokens)
-const colorMap: { [key: string]: string } = {
-  'worship': 'bg-primary-100 text-primary-700',
-  'outreach': 'bg-accent-100 text-accent-700',
-  'music': 'bg-secondary-100 text-secondary-700',
-  'education': 'bg-primary-100 text-primary-700',
-  'youth': 'bg-secondary-100 text-secondary-700',
-  'hospitality': 'bg-accent-100 text-accent-700',
-  'finance': 'bg-primary-100 text-primary-700',
-  'media': 'bg-secondary-100 text-secondary-700',
-  'facilities': 'bg-accent-100 text-accent-700',
-  'default': 'bg-primary-100 text-primary-700',
-};
+/** Row1: blue, pink, slate — Row2: blue, slate, pink. Backgrounds: sky/pink/slate-100 to match ref pastels (~#E1F5FE, #FCE4EC, #F0F4F8). */
+const cardHeaderPalette = [
+  'bg-sky-100 text-sky-600',
+  'bg-pink-100 text-rose-800',
+  'bg-slate-100 text-gray-700',
+  'bg-sky-100 text-sky-600',
+  'bg-slate-100 text-gray-700',
+  'bg-pink-100 text-rose-800',
+] as const
 
 // Fallback data expanded to 9 items
 const fallbackDivisions = [
@@ -167,9 +163,10 @@ export default function DivisionsList() {
           viewport={{ once: true }}
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
         >
-          {cards.map((division: any) => {
+          {cards.map((division: any, index: number) => {
             const IconComponent = iconMap[division.icon] || iconMap['default'];
-            const colorClass = colorMap[division.color] || colorMap['default'];
+            const colorClass =
+              cardHeaderPalette[index % cardHeaderPalette.length]
             return (
               <motion.div 
                 key={division._id}
