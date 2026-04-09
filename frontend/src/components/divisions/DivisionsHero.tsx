@@ -4,11 +4,6 @@ import { motion } from 'framer-motion'
 export default function DivisionsHero() {
   return (
     <div className="relative bg-primary-800 text-white overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 bg-[url('/images/divisions-hero.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-primary-800/70" />
-      </div>
-      
       <div className="container-custom relative z-10 py-16 md:py-24">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

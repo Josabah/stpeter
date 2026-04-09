@@ -8,3 +8,13 @@ frontend/.env.local
 node_modules/
 backend/node_modules/
 frontend/node_modules/
+
+# Next.js build output
+frontend/.next/
+
+# Vercel
+.vercel/
+frontend/.vercel/
+
+# OS
+.DS_Store

@@ -5,10 +5,10 @@ import { motion } from 'framer-motion'
 export default function Hero() {
   return (
     <div className="relative bg-primary-900 text-white overflow-hidden">
-      {/* Background image with overlay */}
-      <div className="absolute inset-0 bg-[url('/images/church-hero.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-primary-900/70" />
-      </div>
+      <div
+        className="absolute inset-0 bg-gradient-to-br from-primary-950 via-primary-900 to-slate-900 opacity-95"
+        aria-hidden
+      />
       
       <div className="container-custom relative z-10 py-20 md:py-32 lg:py-40">
         <motion.div 

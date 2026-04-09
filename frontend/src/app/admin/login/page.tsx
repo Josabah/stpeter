@@ -66,11 +66,11 @@ export default function AdminLogin() {
         <div>
           <div className="flex justify-center">
             <Image
-              src="/images/logo.png"
-              alt="St. Peter Orthodox Church"
+              src="/og-image.jpg"
+              alt="Kidus Petros — church icon"
               width={100}
               height={100}
-              className="h-24 w-auto"
+              className="h-24 w-auto rounded-md object-cover"
             />
           </div>
           <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Admin Login</h2>
