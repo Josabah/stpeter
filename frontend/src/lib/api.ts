@@ -19,6 +19,17 @@ export const apiFetch = (path: string, init?: RequestInit) => {
   return fetch(apiPath(path), init);
 };
 
+export const apiJsonFetcher = async <T>(path: string): Promise<T> => {
+  const response = await apiFetch(path);
+
+  if (!response.ok) {
+    throw new Error(await getApiErrorMessage(response, 'Request failed'));
+  }
+
+  const data = await response.json();
+  return data.data ?? data;
+};
+
 export const getApiErrorMessage = async (response: Response, fallback: string) => {
   try {
     const data = await response.json();

@@ -47,32 +47,9 @@ export default function AdminPage() {
         }
       } catch (error) {
         console.error('Error validating token:', error);
-
-        // If API call fails but we have a token, try to decode it locally as fallback
-        try {
-          const tokenParts = token.split('.');
-          if (tokenParts.length === 3) {
-            const payload = JSON.parse(atob(tokenParts[1]));
-
-            // Check if token is not expired and has admin role
-            if (payload.exp && payload.exp > Date.now() / 1000 && payload.isAdmin === true) {
-              setIsAuthenticated(true);
-            } else {
-              localStorage.removeItem('token');
-              document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-              router.replace('/admin/login');
-            }
-          } else {
-            localStorage.removeItem('token');
-            document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-            router.replace('/admin/login');
-          }
-        } catch (decodeError) {
-          console.error('Error decoding token:', decodeError);
-          localStorage.removeItem('token');
-          document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
-          router.replace('/admin/login');
-        }
+        localStorage.removeItem('token');
+        document.cookie = 'token=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT';
+        router.replace('/admin/login');
       }
       
       setIsLoading(false);

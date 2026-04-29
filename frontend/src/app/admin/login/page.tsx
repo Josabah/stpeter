@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
+import Link from 'next/link';
 import { LockClosedIcon } from '@heroicons/react/24/solid';
 import { apiFetch, getApiErrorMessage } from '@/lib/api';
 
@@ -115,6 +116,12 @@ export default function AdminLogin() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
+          </div>
+
+          <div className="text-right">
+            <Link href="/admin/forgot-password" className="text-sm font-medium text-primary-600 hover:text-primary-700">
+              Forgot password?
+            </Link>
           </div>
 
           <div>

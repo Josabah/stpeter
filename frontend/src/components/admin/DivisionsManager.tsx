@@ -135,7 +135,7 @@ export default function DivisionsManager() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    
+
     try {
       const token = localStorage.getItem('token');
       if (!token) {
@@ -181,7 +181,7 @@ export default function DivisionsManager() {
         const newDivision = await response.json();
         setDivisions([...divisions, newDivision.data]);
       }
-      
+
       handleCloseModal();
     } catch (error) {
       console.error('Error saving division:', error);
