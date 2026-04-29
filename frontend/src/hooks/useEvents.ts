@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { apiFetch } from '@/lib/api';
 
 export interface Event {
   _id: string;
@@ -23,7 +24,7 @@ export const useEvents = () => {
   const fetchEvents = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/events`);
+      const response = await apiFetch('/events');
       
       if (!response.ok) {
         throw new Error('Failed to fetch events');

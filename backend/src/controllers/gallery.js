@@ -212,7 +212,7 @@ exports.deleteGalleryItem = async (req, res) => {
     await cloudinary.uploader.destroy(galleryItem.cloudinaryId);
 
     // Delete gallery item from database
-    await galleryItem.remove();
+    await galleryItem.deleteOne();
 
     res.status(200).json({
       success: true,

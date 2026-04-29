@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { apiFetch, apiPath } from '@/lib/api';
 
 export interface GalleryImage {
   _id: string;
@@ -19,8 +20,8 @@ export const useGallery = () => {
   const fetchImages = async () => {
     try {
       setLoading(true);
-      console.log('Fetching gallery images from:', `${process.env.NEXT_PUBLIC_API_URL}/api/gallery`);
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/gallery`);
+      console.log('Fetching gallery images from:', apiPath('/gallery'));
+      const response = await apiFetch('/gallery');
       
       console.log('Gallery API response status:', response.status);
       

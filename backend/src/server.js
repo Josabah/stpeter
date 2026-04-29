@@ -34,8 +34,11 @@ app.use('/api/divisions', require('./routes/divisions'));
 app.use('/api/events', require('./routes/events'));
 app.use('/api/gallery', require('./routes/gallery'));
 app.use('/api/contact', require('./routes/contact'));
-// TEMPORARY - Remove after creating admin user
-app.use('/api/admin', require('./routes/adminSetup'));
+
+// Temporary setup route: available in development, or explicitly enabled in production.
+if (process.env.NODE_ENV !== 'production' || process.env.ENABLE_ADMIN_SETUP === 'true') {
+  app.use('/api/admin', require('./routes/adminSetup'));
+}
 
 // Optional: test API route
 app.get('/api', (req, res) => {

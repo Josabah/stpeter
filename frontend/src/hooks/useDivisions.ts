@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { apiFetch } from '@/lib/api';
 
 export interface Division {
   _id: string;
@@ -19,7 +20,7 @@ export const useDivisions = () => {
   const fetchDivisions = async () => {
     try {
       setLoading(true);
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/divisions`);
+      const response = await apiFetch('/divisions');
       
       if (!response.ok) {
         throw new Error('Failed to fetch divisions');
